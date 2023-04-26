@@ -18,7 +18,8 @@ public  class Store extends Toy{
         return (new Toy(ID,Name,Amount,Chance));
     }
 
-    public void changeChance(List<Toy> Store){
+    public static void changeChance(List<Toy> Store){
+        Scanner Sc = new Scanner(System.in);
         System.out.print("Введите имя искомой игрушки: ");
         String Name = Sc.nextLine();
         for (Toy toy : Store) {
@@ -29,7 +30,8 @@ public  class Store extends Toy{
             }
         }
     }
-    public Toy getPrize(List<Toy> Store){
+    public static Toy getPrize(List<Toy> Store){
+        Random Rand = new Random();
         int Range = 0;
         Toy T = null;
         int getRange=0;
