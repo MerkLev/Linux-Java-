@@ -3,10 +3,11 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Store extends Toy{
+public  class Store extends Toy{
     Scanner Sc = new Scanner(System.in);
     Random Rand = new Random();
-    public void addToy(List<Toy> Store){
+    public static Toy addToy(List<Toy> Store){
+        Scanner Sc = new Scanner(System.in);
         System.out.print("Введите имя новой игрушки: ");
         String Name = Sc.nextLine();
         int ID = Store.get(Store.size()-1).getID() + 1;
@@ -14,7 +15,7 @@ public class Store extends Toy{
         int Amount = Sc.nextInt();
         System.out.print("Введите Частоту выпадения новой игрушки от 0 до 100%: ");
         int Chance = Sc.nextInt();
-        Store.add(new Toy(ID,Name,Amount,Chance));
+        return (new Toy(ID,Name,Amount,Chance));
     }
 
     public void changeChance(List<Toy> Store){
